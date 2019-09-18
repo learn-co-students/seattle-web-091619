@@ -41,3 +41,8 @@
 - [x] Discuss methods as messages
 - [x] Get more practice with array compositions (`each`, `map`, `select`/`filter`).
 - [x] Explain the need for variable scope and why it's important to not utilize global variables.
+
+- Self : What is it:
+  - Refer to the value of the object.
+  - Make reference to what you are contained inside of.
+  - scope
