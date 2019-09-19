@@ -4,19 +4,25 @@ class User
   attr_reader :username
   attr_writer :username
 
+  @@all = []
+
   def initialize(username)
     @username = username
-    @tweets = []
+    @@all << self
   end
 
-  # #getter
-  # def username
-  #   @username
-  # end
-  #
-  # #setter
-  # def username=(username)
-  #   @username = username
-  # end
+  def post_tweet(message)
+    @tweet = Tweet.new(self, message)
+  end
+
+  def self.all
+    @@all
+  end
+
+  def tweets
+    Tweet.all.select do |tweet|
+      tweet.user == self
+    end
+  end
 
 end

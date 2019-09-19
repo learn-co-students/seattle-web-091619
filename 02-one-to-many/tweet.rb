@@ -16,6 +16,10 @@ class Tweet
     @message
   end
 
+  def message=(message)
+    @message = message
+  end
+
   # def user
   #   ben = User.new
   # end
@@ -27,4 +31,12 @@ class Tweet
   def self.all
     @@all
   end
+
+  def username
+    # binding.pry
+    self.user.username
+  end
+
+
+
 end

@@ -2,8 +2,8 @@
 
 ## SWBATs
 * [ ] Implement one object to many objects relationship
-  * [ ] One object `has many` objects
-  * [ ] One object `belongs to` another object
+  * [x] One object `has many` objects
+  * [x] One object `belongs to` another object
 * [ ] Practice passing custom objects as arguments to methods
 * [ ] Demonstrate single source of truth
 * [ ] Infer type of method (class or instance) through naming conventions
@@ -61,6 +61,13 @@ SocialMedias >-< Users
 
 CoffeeShops>--< Customers
 
+- Wrong way to right way
+- Changing things were confusing
+- Understand what we talked about today
+- Enumerables are still confusing
+- Instance vs classes and methods
+- I Don't know what I don't know.
+
 
 ## Deliverables
 - User class
@@ -69,7 +76,6 @@ CoffeeShops>--< Customers
   - [ ] `liked_tweets` that returns acollection of all the tweets this userhas liked
   - [ ] `unlike_tweet`
 - Tweet class
-
   - [ ] `likers` that returns a collection ofall the Users who have liked this tweet
 
 
