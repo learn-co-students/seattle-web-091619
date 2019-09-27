@@ -14,6 +14,9 @@ class Librarian
 
   def self.all
     librarians = DB[:conn].execute("SELECT * FROM librarians")
+    librarians.map do |librarian|
+      Librarian.new(name, age, fave_book, id)
+    end
   end
 
   def self.create(name, age, fave_book)

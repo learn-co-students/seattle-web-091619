@@ -81,3 +81,9 @@ gem "pry"
 Review Questions :
 - In Ruby -> See some of the things that you can do do SQLite
 - See the SQL Query Written out and see the commands run.
+
+
+09/27/2019:
+- SWBATs
+- What the params thing means
+- 

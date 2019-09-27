@@ -1,32 +1,32 @@
 class Book
   attr_accessor :title, :author, :reader_id
 
-  def initialize(params = {title: title, author: author, reader: reader_id, id: id=nil})
-    @id = params[:id]
-    @title = params[:title]
-    @author = params[:author]
-    @reader_id = params[:reader]
+  def initialize(input = {title: title, author: author, reader_id: reader_id, id: nil})
+    @id = input[:id]
+    @title = input[:title]
+    @author = input[:author]
+    @reader_id = input[:reader_id]
   end
 
   #Create
   def self.new_table
-    DB[:conn].execute("CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, author TEXT)")
+    DB[:conn].execute("CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, author TEXT, reader_id INTEGER)")
   end
 
   #Read
   def self.all
     books = DB[:conn].execute("SELECT * FROM books")
     books.map do |book|
-      Book.new(book["title"], book["author"], book["id"])
+      Book.new(book["title"], book["author"], book["id"], book["reader_id"])
     end
   end
 
 
   #Create
-  def self.create(title, author)
-    sql = "INSERT INTO books(title, author)
-      VALUES(?,?)"
-    DB[:conn].execute(sql,title, author)
+  def self.create(title, author, reader_id)
+    sql = "INSERT INTO books(title, author, reader_id)
+      VALUES(?,?, ?)"
+    DB[:conn].execute(sql,title, author, reader_id)
   end
 
   #Read
@@ -34,7 +34,8 @@ class Book
     sql = "SELECT * FROM books WHERE id = ?"
     books = DB[:conn].execute(sql, id)
     books.map do |book|
-        Book.new(book["title"], book["author"], book["id"])
+        input_hash = { title: book["title"], author: book["author"],id: book["id"], reader_id: book["reader_id"] }
+        Book.new(input_hash)
     end.first
   end
 
