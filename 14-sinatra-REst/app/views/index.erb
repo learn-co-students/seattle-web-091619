@@ -1,0 +1,19 @@
+<link rel = "stylesheet"
+  type = "text/css"
+  href = "public/style.css" />
+
+<h2>Index Page</h2>
+
+<% @books.each do |book| %>
+  <div class="row=3">
+    <div class="column">
+      <div class="card">
+      <h4><%= book.title %></h4>
+      <form action="/books/<%="#{book.id}" %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Book">
+      </form>
+      </div>
+    </div>
+  </div>
+<% end %>
