@@ -1,11 +1,14 @@
 # Hashketball Review
 
+TEST
+
 ## Objectives
+
 - Understand your responsibility with staying up to date with the class calendar
 - Git Version Control
-    - Understand Clone vs Fork
-    - Understand Master Branch, Checkout New Branch, Checking for Branches
-    - Understand the uses of `git add`, `git commit`, `git push`, `git pull`
+  - Understand Clone vs Fork
+  - Understand Master Branch, Checkout New Branch, Checking for Branches
+  - Understand the uses of `git add`, `git commit`, `git push`, `git pull`
 - Distinguish between data types in Ruby
 - Show how to look up documentation for data types in Ruby
 - Demonstrate the use of common Array methods
@@ -76,7 +79,6 @@
   - If you `pry` above the code, it won't exist!
   - If you `pry` after an error, you'll never hit the `pry`
 - Googling, reading docs, playing with code to understand it.
-
 
 ## Bonus Questions:
 
