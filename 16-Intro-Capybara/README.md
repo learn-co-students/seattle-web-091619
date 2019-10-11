@@ -36,4 +36,6 @@ Capybara naturally fits with RSpec and no special integration is needed.
 
 ## Behavior Driven Development
 
-- Behavioral Driven Development (BDD) is a software development approach that has evolved from TDD (Test Driven Development). It differs by being written in a shared language, which improves communication between tech and non-tech teams and stakeholders.
+- Behavioral Driven Development (BDD) is a software development approach that has evolved from TDD (Test Driven Development). It differs by being written in a shared language, which improves communication between tech and non-tech teams and stakeholders. </br>
+  This is where user stories come into play. </br>
+  BDD answers the "why" behind the code. </br>
