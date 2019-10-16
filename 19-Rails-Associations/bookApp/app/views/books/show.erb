@@ -1,0 +1,4 @@
+<h2><%= @book.title %></h2>
+<h3><%= @book.author.name %></h3>
+<%= @book.snippet %>
+<%= button_to "Destroy", book_path(@book.id), method: :delete %>
