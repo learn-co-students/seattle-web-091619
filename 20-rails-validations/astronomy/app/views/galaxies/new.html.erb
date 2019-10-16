@@ -1,0 +1,13 @@
+<%= flash[:message] %>
+
+<p>Find me in app/views/galaxies/new.html.erb</p>
+
+<%= form_for @galaxy do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :size %>
+  <%= f.number_field :size %>
+  <%= f.label :distance %>
+  <%= f.number_field :distance %>
+  <%= f.submit %>
+<% end %>
