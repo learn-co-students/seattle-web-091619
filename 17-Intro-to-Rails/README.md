@@ -1,1 +1,1 @@
-# Into to Rails
+# Intoduction to Rails
