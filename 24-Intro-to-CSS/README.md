@@ -6,6 +6,7 @@
 * Differentiate between inline, internal, and external stylesheets
 * Understand how to use class, id, and element selectors, and selector order of importance
 * Demonstrate the use of the box model, floats, clear, positioning, and CSSS grid in page layout
+* Discuss what singleton or void elements are
 * Introduce CSS Frameworks like Bootstrap and Semantic UI
 
 ## CSS Basics
