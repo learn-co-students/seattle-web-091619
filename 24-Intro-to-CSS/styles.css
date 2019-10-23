@@ -1,0 +1,65 @@
+/********************** SITE-WIDE STYLES **********************/
+h1 {
+  color : purple;
+  font-size:50px;
+}
+
+.headers{
+  color : purple;
+  font-size:50px;
+}
+
+#menu{
+  background : slategray;
+  height : 1.5em;
+  border-radius: 5px;
+}
+
+body{
+  padding : 30px;
+  border : 40px solid black;
+  margin : 100px; 
+  border-left: 20px solid green;
+  border-right: 20px solid green;
+}
+
+/************************* HOME PAGE **************************/
+/************************** TREE FILE ***************************/
+.tree-images{
+  padding: 30px;
+  border : 40px solid black;
+  border-left: 20px solid green;
+  border-right: 20px solid green;
+  margin : 100px;
+  margin-left : 10px;
+  height : 100px;
+  float : left;
+  clear : both;
+  width : 48%;
+}
+
+.trees{
+  width : 48%;
+}
+
+/************************ IMAGE GALLERY ***********************/
+.gallery-img{
+  display : grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap :20px;
+}
+
+.gallery-img {
+  padding: 20px;
+  background-color: black;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.gallery-img:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
