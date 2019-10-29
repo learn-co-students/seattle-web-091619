@@ -1,0 +1,12 @@
+<div id="time"></div>
+
+<script>
+  let seconds = 0
+
+  // run this code every 1000 milliseconds
+  setInterval(() => {
+    seconds++
+    let clock = document.getElementById('time')
+    clock.textContent = seconds
+  }, 1000)
+</script>
