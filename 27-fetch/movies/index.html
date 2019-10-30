@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet">
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <h1>Top 100 Movies</h1>
+
+    <div>
+      <form id="add-movie-form">
+        <input name="title" type="text" placeholder="title" />
+        <input name="year" type="number" placeholder="1999" min="1850" />
+        <input type="submit" value="Add Movie" />
+      </form>
+    </div>
+
+    <div>
+      <form id="search-filter-form">
+        <input id="filter-input" name="filter" type="text" />
+        <input type="submit" value="filter" />
+      </form>
+      <button id="clear-filter">clear</button>
+    </div>
+
+    <div>
+      <button id="sort">Sort by Year</button>
+    </div>
+
+    <div id="loading">Loading...</div>
+    <div>
+      <ol id="top-100-movies"></ol>
+    </div>
+  </body>
+</html>

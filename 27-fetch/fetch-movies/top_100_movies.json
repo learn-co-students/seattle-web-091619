@@ -1,0 +1,14 @@
+{
+  "movies": [
+    {"id": 1, "title": "CITIZEN KANE" , "year": "1941"},
+    {"id": 2, "title": "CASABLANCA" , "year": "1942"},
+    {"id": 3, "title": "THE GODFATHER" , "year": "1972"},
+    {"id": 4, "title": "GONE WITH THE WIND" , "year": "1939"},
+    {"id": 5, "title": "LAWRENCE OF ARABIA" , "year": "1962"},
+    {"id": 6, "title": "THE WIZARD OF OZ" , "year": "1939"},
+    {"id": 7, "title": "THE GRADUATE" , "year": "1967"},
+    {"id": 8, "title": "ON THE WATERFRONT" , "year": "1954"},
+    {"id": 9, "title": "SCHINDLER'S LIST" , "year": "1993"},
+    {"id": 10, "title": "SINGIN' IN THE RAIN" , "year": "1952"}
+  ]
+}

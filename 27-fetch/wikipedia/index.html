@@ -1,0 +1,38 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeForm()
+  })
+
+  function initializeForm() {
+    let form = document.getElementById('search-form')
+    let input = document.getElementById('form-input')
+    let image = document.getElementById('image')
+
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault()
+
+      let query = input.value
+      fetch(page(query))
+      .then(res => res,json())
+      .then(data => {
+         image.src = data.thumbnail.source
+      })
+    })
+  }
+
+  function page(query) {
+    let url = "https://en.wikipedia.org/w/api.php?action=query&titles=${query}&prop=pageimages&format=json&pithumbsize=100"
+    return url
+  }
+</script>
+
+<div>
+  <form id="search-form">
+    <input id="form-input" placeholder="Washington_(state)" type="text" />
+    <input type="submit"></input>
+  </form>
+</div>
+
+<div>
+  <img id="image" src="" />
+</div>

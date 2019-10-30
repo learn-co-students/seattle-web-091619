@@ -1,0 +1,18 @@
+<script>
+console.log('A script loaded')
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('B DOM loaded')
+
+  let button = document.getElementById('button')
+  button.addEventListener('click', () => {
+    console.log('C button clicked')
+  })
+
+  console.log('D DOM load done')
+})
+
+console.log('E end of script')
+</script>
+
+<button id="button">click</button>
