@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "content": "I saw a dog eat a cat.",
+      "likes": 8,
+      "comments": [
+        "hahaaha",
+        "no way!!",
+        "that's hilarious"
+      ]
+    },
+    {
+      "id": 2,
+      "content": "I saw a bird eat a dog",
+      "likes": 12,
+      "comments": [
+        "that's terrible.",
+        "boooooo"
+      ]
+    },
+    {
+      "id": 3,
+      "content": "I saw a man eat a corndog",
+      "likes": 14,
+      "comments": [
+        "now I'm hungry"
+      ]
+    }
+  ]
+}
