@@ -1,0 +1,1100 @@
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (204.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pokemon-teams-backend_development"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (200.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pokemon-teams-backend_test"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (500.3ms)[0m  [1m[35mCREATE DATABASE "pokemon-teams-backend_development" ENCODING = 'unicode'[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (428.3ms)[0m  [1m[35mCREATE DATABASE "pokemon-teams-backend_test" ENCODING = 'unicode'[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2588330310256498185)[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+Migrating to CreateTrainers (20191111224419)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191111224419_create_trainers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191111224419"]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+Migrating to CreatePokemons (20191111224547)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "pokemons" ("id" bigserial primary key, "species" character varying, "nickname" character varying, "trainer_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_cb73098d36"
+FOREIGN KEY ("trainer_id")
+  REFERENCES "trainers" ("id")
+)[0m
+  ↳ db/migrate/20191111224547_create_pokemons.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_pokemons_on_trainer_id" ON "pokemons"  ("trainer_id")[0m
+  ↳ db/migrate/20191111224547_create_pokemons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191111224547"]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-11 22:48:33.349064"], ["updated_at", "2019-11-11 22:48:33.349064"]]
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2588330310256498185)[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rake-13.0.0/lib/rake/task.rb:280
+  [1m[36mTrainer Destroy (0.7ms)[0m  [1m[31mDELETE FROM "trainers"[0m
+  ↳ db/seeds.rb:4
+  [1m[36mPokemon Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pokemons"[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.5ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Natalie"], ["created_at", "2019-11-11 22:48:35.044027"], ["updated_at", "2019-11-11 22:48:35.044027"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Prince"], ["created_at", "2019-11-11 22:48:35.045945"], ["updated_at", "2019-11-11 22:48:35.045945"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.5ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dick"], ["created_at", "2019-11-11 22:48:35.047960"], ["updated_at", "2019-11-11 22:48:35.047960"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Rachel"], ["created_at", "2019-11-11 22:48:35.050219"], ["updated_at", "2019-11-11 22:48:35.050219"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Garry"], ["created_at", "2019-11-11 22:48:35.051658"], ["updated_at", "2019-11-11 22:48:35.051658"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jason"], ["created_at", "2019-11-11 22:48:35.053033"], ["updated_at", "2019-11-11 22:48:35.053033"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Matt"], ["created_at", "2019-11-11 22:48:35.054274"], ["updated_at", "2019-11-11 22:48:35.054274"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Niky"], ["created_at", "2019-11-11 22:48:35.055940"], ["updated_at", "2019-11-11 22:48:35.055940"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ashley"], ["created_at", "2019-11-11 22:48:35.057767"], ["updated_at", "2019-11-11 22:48:35.057767"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Onix"], ["nickname", "Chasity"], ["trainer_id", 1], ["created_at", "2019-11-11 22:48:36.045336"], ["updated_at", "2019-11-11 22:48:36.045336"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Jigglypuff"], ["nickname", "Cristobal"], ["trainer_id", 2], ["created_at", "2019-11-11 22:48:36.051507"], ["updated_at", "2019-11-11 22:48:36.051507"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Mewtwo"], ["nickname", "Adelaida"], ["trainer_id", 3], ["created_at", "2019-11-11 22:48:36.053728"], ["updated_at", "2019-11-11 22:48:36.053728"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Cubone"], ["nickname", "Forrest"], ["trainer_id", 3], ["created_at", "2019-11-11 22:48:36.055936"], ["updated_at", "2019-11-11 22:48:36.055936"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Pikachu"], ["nickname", "Carlotta"], ["trainer_id", 3], ["created_at", "2019-11-11 22:48:36.058837"], ["updated_at", "2019-11-11 22:48:36.058837"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Spearow"], ["nickname", "Pierre"], ["trainer_id", 3], ["created_at", "2019-11-11 22:48:36.062469"], ["updated_at", "2019-11-11 22:48:36.062469"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Squirtle"], ["nickname", "Ryan"], ["trainer_id", 3], ["created_at", "2019-11-11 22:48:36.064600"], ["updated_at", "2019-11-11 22:48:36.064600"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Kabuto"], ["nickname", "Nellie"], ["trainer_id", 4], ["created_at", "2019-11-11 22:48:36.066860"], ["updated_at", "2019-11-11 22:48:36.066860"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Clefable"], ["nickname", "Curtis"], ["trainer_id", 4], ["created_at", "2019-11-11 22:48:36.068992"], ["updated_at", "2019-11-11 22:48:36.068992"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Lapras"], ["nickname", "Stacey"], ["trainer_id", 4], ["created_at", "2019-11-11 22:48:36.071345"], ["updated_at", "2019-11-11 22:48:36.071345"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Beedrill"], ["nickname", "Dylan"], ["trainer_id", 4], ["created_at", "2019-11-11 22:48:36.073006"], ["updated_at", "2019-11-11 22:48:36.073006"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Gengar"], ["nickname", "Sanford"], ["trainer_id", 5], ["created_at", "2019-11-11 22:48:36.075696"], ["updated_at", "2019-11-11 22:48:36.075696"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Farfetch'd"], ["nickname", "Chet"], ["trainer_id", 5], ["created_at", "2019-11-11 22:48:36.077560"], ["updated_at", "2019-11-11 22:48:36.077560"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Bellsprout"], ["nickname", "Toshia"], ["trainer_id", 5], ["created_at", "2019-11-11 22:48:36.079081"], ["updated_at", "2019-11-11 22:48:36.079081"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Charmeleon"], ["nickname", "Ezra"], ["trainer_id", 6], ["created_at", "2019-11-11 22:48:36.080664"], ["updated_at", "2019-11-11 22:48:36.080664"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Koffing"], ["nickname", "Rob"], ["trainer_id", 6], ["created_at", "2019-11-11 22:48:36.082930"], ["updated_at", "2019-11-11 22:48:36.082930"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Marowak"], ["nickname", "Delana"], ["trainer_id", 6], ["created_at", "2019-11-11 22:48:36.085413"], ["updated_at", "2019-11-11 22:48:36.085413"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Oddish"], ["nickname", "Horacio"], ["trainer_id", 6], ["created_at", "2019-11-11 22:48:36.087612"], ["updated_at", "2019-11-11 22:48:36.087612"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Charizard"], ["nickname", "Tonita"], ["trainer_id", 6], ["created_at", "2019-11-11 22:48:36.090546"], ["updated_at", "2019-11-11 22:48:36.090546"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Goldeen"], ["nickname", "Jared"], ["trainer_id", 7], ["created_at", "2019-11-11 22:48:36.093875"], ["updated_at", "2019-11-11 22:48:36.093875"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Venomoth"], ["nickname", "Valeri"], ["trainer_id", 7], ["created_at", "2019-11-11 22:48:36.095978"], ["updated_at", "2019-11-11 22:48:36.095978"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Goldeen"], ["nickname", "Heath"], ["trainer_id", 7], ["created_at", "2019-11-11 22:48:36.097909"], ["updated_at", "2019-11-11 22:48:36.097909"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Onix"], ["nickname", "Melita"], ["trainer_id", 7], ["created_at", "2019-11-11 22:48:36.099921"], ["updated_at", "2019-11-11 22:48:36.099921"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Primeape"], ["nickname", "Yanira"], ["trainer_id", 7], ["created_at", "2019-11-11 22:48:36.101649"], ["updated_at", "2019-11-11 22:48:36.101649"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Graveler"], ["nickname", "Elaina"], ["trainer_id", 7], ["created_at", "2019-11-11 22:48:36.103306"], ["updated_at", "2019-11-11 22:48:36.103306"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Growlithe"], ["nickname", "Andrew"], ["trainer_id", 8], ["created_at", "2019-11-11 22:48:36.106117"], ["updated_at", "2019-11-11 22:48:36.106117"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Marowak"], ["nickname", "Natisha"], ["trainer_id", 8], ["created_at", "2019-11-11 22:48:36.109010"], ["updated_at", "2019-11-11 22:48:36.109010"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Diglett"], ["nickname", "Shirlee"], ["trainer_id", 8], ["created_at", "2019-11-11 22:48:36.111326"], ["updated_at", "2019-11-11 22:48:36.111326"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Jigglypuff"], ["nickname", "Machelle"], ["trainer_id", 8], ["created_at", "2019-11-11 22:48:36.112921"], ["updated_at", "2019-11-11 22:48:36.112921"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Meowth"], ["nickname", "Jaquelyn"], ["trainer_id", 8], ["created_at", "2019-11-11 22:48:36.115174"], ["updated_at", "2019-11-11 22:48:36.115174"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Exeggcute"], ["nickname", "Seymour"], ["trainer_id", 8], ["created_at", "2019-11-11 22:48:36.116865"], ["updated_at", "2019-11-11 22:48:36.116865"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Cubone"], ["nickname", "Leslie"], ["trainer_id", 9], ["created_at", "2019-11-11 22:48:36.118287"], ["updated_at", "2019-11-11 22:48:36.118287"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[36mPokemon Load (1.1ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" ORDER BY "trainers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1 LIMIT $2[0m  [["trainer_id", 9], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-11-11 14:49:45 -0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/rack-2.0.7/lib/rack/runtime.rb:22
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/mbrophy/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mbrophy/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/trainers" for ::1 at 2019-11-11 14:49:49 -0800
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for TrainersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pokemons" for ::1 at 2019-11-11 14:49:55 -0800
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for PokemonsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/trainers" for ::1 at 2019-11-11 14:50:57 -0800
+Processing by TrainersController#index as HTML
+  [1m[36mTrainer Load (2.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model/serializer/collection_serializer.rb:71
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.81ms)
+Completed 200 OK in 46ms (Views: 31.1ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/trainers" for ::1 at 2019-11-11 14:53:22 -0800
+Processing by TrainersController#index as HTML
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model/serializer/collection_serializer.rb:71
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/trainers" for ::1 at 2019-11-11 14:53:34 -0800
+Processing by TrainersController#index as HTML
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model/serializer/collection_serializer.rb:71
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/trainers" for ::1 at 2019-11-11 14:53:42 -0800
+Processing by TrainersController#index as HTML
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model/serializer/collection_serializer.rb:71
+[active_model_serializers]   [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 2]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 3]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 4]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 5]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 6]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 7]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 8]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 9]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.56ms)
+Completed 200 OK in 57ms (Views: 35.1ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/trainers" for ::1 at 2019-11-11 14:58:28 -0800
+Processing by TrainersController#index as */*
+  [1m[36mTrainer Load (0.8ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model/serializer/collection_serializer.rb:71
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 2]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 3]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 4]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 5]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 6]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 7]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 8]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 9]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.39ms)
+Completed 200 OK in 46ms (Views: 30.6ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:34 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Beedrill"], ["nickname", "Amy"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:34.551574"], ["updated_at", "2019-11-11 22:58:34.551574"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (1.71ms)
+Completed 200 OK in 142ms (Views: 12.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:36 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Staryu"], ["nickname", "Napoleon"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:36.303482"], ["updated_at", "2019-11-11 22:58:36.303482"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.48ms)
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:36 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Arcanine"], ["nickname", "Marisa"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:36.448210"], ["updated_at", "2019-11-11 22:58:36.448210"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.06ms)
+Completed 200 OK in 11ms (Views: 2.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:36 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Pidgeot"], ["nickname", "Brice"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:36.600214"], ["updated_at", "2019-11-11 22:58:36.600214"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.33ms)
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:36 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Scyther"], ["nickname", "Joshua"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:36.773338"], ["updated_at", "2019-11-11 22:58:36.773338"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (3.21ms)
+Completed 200 OK in 10ms (Views: 3.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:36 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:38 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:38 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:38 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:38 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started DELETE "/pokemons/1" for ::1 at 2019-11-11 14:58:45 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 6ms (ActiveRecord: 2.2ms)
+
+
+Started DELETE "/pokemons/33" for ::1 at 2019-11-11 14:58:45 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"33"}
+  [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.2ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 33]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+
+
+Started DELETE "/pokemons/34" for ::1 at 2019-11-11 14:58:45 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"34"}
+  [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.8ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 34]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 4ms (ActiveRecord: 2.0ms)
+
+
+Started DELETE "/pokemons/35" for ::1 at 2019-11-11 14:58:45 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"35"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.2ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 35]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 3ms (ActiveRecord: 1.3ms)
+
+
+Started DELETE "/pokemons/36" for ::1 at 2019-11-11 14:58:45 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"36"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 36]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 4ms (ActiveRecord: 1.8ms)
+
+
+Started DELETE "/pokemons/37" for ::1 at 2019-11-11 14:58:46 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.2ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 37]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 2ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:47 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Electrode"], ["nickname", "Janetta"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:47.290746"], ["updated_at", "2019-11-11 22:58:47.290746"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (3.83ms)
+Completed 200 OK in 26ms (Views: 3.9ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:47 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Electabuzz"], ["nickname", "Blaine"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:47.444367"], ["updated_at", "2019-11-11 22:58:47.444367"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:47 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Kabutops"], ["nickname", "Marcelene"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:47.590260"], ["updated_at", "2019-11-11 22:58:47.590260"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.32ms)
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:47 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Hitmonlee"], ["nickname", "Tess"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:47.749394"], ["updated_at", "2019-11-11 22:58:47.749394"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.69ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:47 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Primeape"], ["nickname", "Grisel"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:47.898318"], ["updated_at", "2019-11-11 22:58:47.898318"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.69ms)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:48 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Poliwrath"], ["nickname", "Chance"], ["trainer_id", 1], ["created_at", "2019-11-11 22:58:48.054422"], ["updated_at", "2019-11-11 22:58:48.054422"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (1.8ms)
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:48 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started POST "/pokemons" for ::1 at 2019-11-11 14:58:48 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (uninitialized constant PokemonsController::NULL):
+  
+app/controllers/pokemons_controller.rb:21:in `create'
+Started DELETE "/pokemons/38" for ::1 at 2019-11-11 14:58:50 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.3ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 38]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 4ms (ActiveRecord: 1.5ms)
+
+
+Started DELETE "/pokemons/39" for ::1 at 2019-11-11 14:58:50 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 39]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 4ms (ActiveRecord: 1.6ms)
+
+
+Started DELETE "/pokemons/40" for ::1 at 2019-11-11 14:58:50 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 40]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 3ms (ActiveRecord: 1.4ms)
+
+
+Started DELETE "/pokemons/41" for ::1 at 2019-11-11 14:58:50 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mPokemon Load (0.1ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 41]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 2ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:59:03 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Muk"], ["nickname", "Kristopher"], ["trainer_id", 1], ["created_at", "2019-11-11 22:59:03.033011"], ["updated_at", "2019-11-11 22:59:03.033011"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (1.65ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 14:59:03 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Tangela"], ["nickname", "Darin"], ["trainer_id", 1], ["created_at", "2019-11-11 22:59:03.185696"], ["updated_at", "2019-11-11 22:59:03.185696"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.54ms)
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/pokemons/42" for ::1 at 2019-11-11 15:03:23 -0800
+Processing by PokemonsController#destroy as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mPokemon Load (0.9ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[36mPokemon Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 42]]
+  ↳ app/controllers/pokemons_controller.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:33
+Completed 204 No Content in 4ms (ActiveRecord: 2.0ms)
+
+
+Started POST "/pokemons" for ::1 at 2019-11-11 15:03:24 -0800
+Processing by PokemonsController#create as 
+  Parameters: {"nickname"=>"", "species"=>"", "trainer_id"=>1, "pokemon"=>{"species"=>"", "nickname"=>"", "trainer_id"=>1}}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:19
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  ↳ app/controllers/pokemons_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mCACHE Trainer Load (0.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("species", "nickname", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["species", "Vaporeon"], ["nickname", "Bradley"], ["trainer_id", 1], ["created_at", "2019-11-11 23:03:24.408265"], ["updated_at", "2019-11-11 23:03:24.408265"]]
+  ↳ app/controllers/pokemons_controller.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:26
+[active_model_serializers]   [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."trainer_id" = $1[0m  [["trainer_id", 1]]
+[active_model_serializers]   ↳ /Users/mbrophy/.rvm/gems/ruby-2.6.3/gems/active_model_serializers-0.10.10/lib/active_model_serializers/serializable_resource.rb:10
+[active_model_serializers] Rendered PokemonSerializer with ActiveModelSerializers::Adapter::Attributes (2.32ms)
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 2.6ms)
+
+
